@@ -6,122 +6,54 @@
     </title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Mono" rel="stylesheet">
-    <script src="scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/cf737a6151.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body onload="initialise()">
 
 
-<div id="main-div">
+    <div id="main-div">
 
-    <div id="side-panel">
-
-        <div id="header">
-            <h1>Basic colour tool</h1>
-            <h3>FUN AND EASY!</h3>
+        <div class="Header">
+            <h1>🌈 Basic Color Tool</h1>
         </div>
 
-        <div id="menu">
+        <div class="hex-viewer">
 
-            <div class="menu-div" id="sub-menu-1">
-                <h2>RGB</h2>
-
-                <div id="rgb-controls">
-
-                    <input type="range" class="slider" id="red" min="0" max="255" oninput="changeBg()">
-                    <input type="range" class="slider" id="green" min="0" max="255" oninput="changeBg()">
-                    <input type="range" class="slider" id="blue" min="0" max="255" oninput="changeBg()">
+            <div class="hex-inner-box">
+                <div class="hex-text">
+                    <input type="text" value="Basic Color Tool" id="hex" class="hex">
+                </div>
+                <div class="copy-text" onmouseout="outFunc()">
+                    <i id="copy-icon" class="far fa-copy">
+                        <span class="copy-tooltiptext" id="mytoolTip">Copy</span>
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="color-controls">
+            <div class="controls-box">
+                <div id="dice-box" class="dice-container">
+                    <i id="dice" class="fas fa-dice"></i>
+                    <span class="tooltiptext">Shuffle</span>
+                </div>
+                <div class="rgb-controls">
+                    <span class="control-text">RGB</span>
+                    <input type="range" class="slider-small" id="red" min="0" max="255" oninput="changeBg()"><br />
+                    <input type="range" class="slider-small" id="green" min="0" max="255" oninput="changeBg()"><br />
+                    <input type="range" class="slider-small" id="blue" min="" max="255" oninput="changeBg()">
 
                 </div>
+            </div>
+            <div class="alpha-box">
+                <span class="control-text">AlPHA</span>
+                <input type="range" class="slider-small" id="alpha" min="1" max="255" oninput="changeBg()">
 
             </div>
-
-            <div class="menu-div" id="sub-menu-2">
-                <h2>Gradient</h2>
-
-                <div id="gradient-controls">
-
-
-                    <div class="gradient-container">
-                        <p class="identifier">Colour 1</p>
-                        <div value="#e66465" class="gradient" id="color_1" onclick="switchColor(this.id)"></div>
-                    </div>
-
-                    <div class="gradient-container">
-                        <p class="identifier">Colour 2</p>
-                        <div value="#9198e5" class="gradient" id="color_2" onclick="switchColor(this.id)"></div>
-                    </div>
-
-                </div>
-
-
-                <br />
-                <div class="rgb-controls-small">
-
-                    <input type="range" class="slider-small" id="red_small" min="1" max="255" oninput="changeGradient()"><br />
-                    <input type="range" class="slider-small" id="green_small" min="1" max="255" oninput="changeGradient()"><br />
-                    <input type="range" class="slider-small" id="blue_small" min="1" max="255" oninput="changeGradient()">
-
-                </div>
-
-                <div id="gradient-pos-div">
-                    <h2>Gradient pos</h2>
-                        <p id="gradient-pos-percentage"></p>
-                        <input type="range" class="slider" id="grdientX-pos-slider" min="1" max="100" oninput="gradient()">
-                </div>
-
-
-            </div>
-
         </div>
-
-        <div id="about-div">
-                <div class="picBox">
-                        <a href="https://www.youtube.com/channel/UCDtrZ1tQJrnA2OURzPnmNig"target="_blank">
-                        <img src="images/icons8-play-button-50.png" width="32" height="32">
-                        <p>YouTube</p>
-                       </a>
-                    </div>
-                   
-                   
-                       <div class="picBox">
-                           <a href="https://github.com/Hayzie/BasicColorTool.git" target="_blank">
-                              <img src="images/icons8-github-50.png" width="32" height="32">
-                              <p>GitHub</p>
-                          </a>
-                          </div>
-            <p>Basic colour tool | Hazel phago &copy; 2018</p>
-        </div>
-
     </div>
-
-    <div class="labels" id="rgb-hex">
-
-        <img class="copyIcon" src="images/icons8-copy-24.png" width="16" height="16" onclick="copyToclipBoard('hex_color')">
-
-        <p class="hex-label" id="hex_color">#</p>
-
-    </div>
-
-    <div class="labels" id="gradient-hex-1">
-
-        <img class="copyIcon" src="images/icons8-copy-24.png" width="16" height="16" onclick="copyToclipBoard('hex_color_1')">
-        <p class="hex-label" id="hex_color_1">#</p>
-    </div>
-
-    <div class="labels" id="gradient-hex-2">
-
-        <img class="copyIcon" src="images/icons8-copy-24.png" width="16" height="16" onclick="copyToclipBoard('hex_color_2')">
-        <h2 class="hex-label" id="hex_color_2">#</p>
-    </div>
-
-
-    <canvas id="canvas"></canvas>
-
-
-
-    <input type="text" id="copyText">
-</div>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
